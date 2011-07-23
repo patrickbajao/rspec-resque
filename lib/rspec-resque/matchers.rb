@@ -13,15 +13,15 @@ end
 RSpec::Matchers.define :have_queued do |*expected_args|
   extend MatcherHelper
   
-  match do |actual|
-    enqueued?(actual, expected_args)
+  match do |job|
+    enqueued?(job, expected_args)
   end
 
-  failure_message_for_should do |actual|
+  failure_message_for_should do |job|
     "expected that #{actual} would have [#{expected_args.join(', ')}] queued"
   end
 
-  failure_message_for_should_not do |actual|
+  failure_message_for_should_not do |job|
     "expected that #{actual} would not have [#{expected_args.join(', ')}] queued"
   end
 
@@ -33,16 +33,16 @@ end
 RSpec::Matchers.define :have_queue_size_of do |size|
   extend MatcherHelper
 
-  match do |actual|
+  match do |job|
     queue(actual).size == size
   end
 
-  failure_message_for_should do |actual|
-    "expected that #{actual} would have #{size} entries queued, but got #{queue(actual).size} instead"
+  failure_message_for_should do |job|
+    "expected that #{job} would have #{size} entries queued, but got #{queue(job).size} instead"
   end
 
-  failure_message_for_should_not do |actual|
-    "expected that #{actual} would not have #{size} entries queued, but got #{queue(actual).size} instead"
+  failure_message_for_should_not do |job|
+    "expected that #{job} would not have #{size} entries queued, but got #{queue(job).size} instead"
   end
 
   description do
