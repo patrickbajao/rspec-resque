@@ -1,6 +1,7 @@
 require "resque"
 require "rspec-resque/version"
 require "rspec-resque/helpers"
+require "rspec-resque/matchers"
 
 module RspecResque
   extend self
