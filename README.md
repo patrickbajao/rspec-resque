@@ -12,7 +12,7 @@ To check if job is enqueued with specific arguments, you can use the `have_queue
 
 ### have_queue_size_of
 
-To check the size of the queue where a certain job is enqueued, you can use the `have_queue_size_of` matcher.
+To check the size of the queue of a job, you can use the `have_queue_size_of` matcher.
 
     Job.should have_queue_size_of(1)
 
