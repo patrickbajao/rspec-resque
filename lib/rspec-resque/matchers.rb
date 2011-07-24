@@ -34,7 +34,7 @@ RSpec::Matchers.define :have_queue_size_of do |size|
   extend MatcherHelper
 
   match do |job|
-    queue(actual).size == size
+    queue(job).size == size
   end
 
   failure_message_for_should do |job|
