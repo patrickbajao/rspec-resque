@@ -3,7 +3,7 @@ require "rspec-resque/version"
 
 Gem::Specification.new do |s|
   s.name        = "rspec-resque"
-  s.version     = Rspec::Resque::VERSION
+  s.version     = RspecResque::VERSION
   s.authors     = ["Patrick Bajao"]
   s.email       = ["earl.bajao@gmail.com"]
   s.homepage    = "https://github.com/patrickbajao/rspec-resque"
