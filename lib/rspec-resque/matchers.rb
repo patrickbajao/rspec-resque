@@ -18,11 +18,11 @@ RSpec::Matchers.define :have_queued do |*expected_args|
   end
 
   failure_message_for_should do |job|
-    "expected that #{actual} would have [#{expected_args.join(', ')}] queued"
+    "expected that #{job} would have [#{expected_args.join(', ')}] queued"
   end
 
   failure_message_for_should_not do |job|
-    "expected that #{actual} would not have [#{expected_args.join(', ')}] queued"
+    "expected that #{job} would not have [#{expected_args.join(', ')}] queued"
   end
 
   description do
